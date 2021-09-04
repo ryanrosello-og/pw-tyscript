@@ -1,4 +1,3 @@
-import type { Page } from '@playwright/test';
 import { BasePage } from '../pages/basePage';
 
 export class DevPage extends BasePage {
@@ -10,27 +9,26 @@ export class DevPage extends BasePage {
     'h1:has-text("Core concepts")'
   );
 
-  constructor(page: Page) {
-    super(page);
-  }
-
   async getToc() {
     const text = await this.toc.innerText();
     return text.split('\n').filter((line) => !!line);
   }
 
   async whyPwIsShown() {
-    return this.whyPlaywright.isVisible()
+    return this.whyPlaywright.isVisible();
   }
 
   async clickGetStarted() {
     await this.getStarted.click();
-    // await this.coreConcepts.isVisible
     await this.page.waitForSelector(`text=Core concepts`);
   }
 
   async clickTradeOffs() {
     await this.tradeOffsLearnMore.click();
     await this.page.waitForSelector(`h1:has-text("Why Playwright?")`);
+  }
+
+  async goto() {
+    super.goto('https://playwright.dev', 'text=Get started');
   }
 }

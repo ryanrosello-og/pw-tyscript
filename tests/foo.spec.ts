@@ -12,6 +12,7 @@ test('basic test', async ({ page }) => {
 
 test('dev Page', async ({ page }) => {
   const pwDevPage = new DevPage(page);
+  await pwDevPage.goto();
   await pwDevPage.clickGetStarted();
   // expect(await pwDevPage.getToc()).toEqual([
   //   'Installation',
@@ -26,6 +27,7 @@ test('dev Page', async ({ page }) => {
 
 test('Core Concepts table of contents', async ({ page }) => {
   const pwDevPage = new DevPage(page);
+  await pwDevPage.goto();
   await pwDevPage.clickTradeOffs();
   expect(await pwDevPage.whyPwIsShown()).toBeTruthy();
 });

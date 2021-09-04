@@ -6,4 +6,9 @@ export class BasePage {
   constructor(page: Page) {
     this.page = page;
   }
+
+  async goto(route: string, locatorToWaitFor: string) {
+    await this.page.goto(route);
+    await this.page.waitForSelector(locatorToWaitFor);
+  }
 }

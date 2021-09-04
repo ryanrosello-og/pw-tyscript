@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "prettier": "prettier --write --loglevel warn \"**/**/*.ts\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.14.1",
+    "prettier": "^2.3.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2,
+    "semi": true,
+    "printWidth": 80
+  }
+}

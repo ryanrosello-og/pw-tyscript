@@ -14,10 +14,6 @@ export class DevPage extends BasePage {
     super(page);
   }
 
-  async goto() {
-    super.goto('https://playwright.dev', 'text=Get started');
-  }
-
   async getToc() {
     const text = await this.toc.innerText();
     return text.split('\n').filter((line) => !!line);

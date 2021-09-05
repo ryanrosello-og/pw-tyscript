@@ -1,13 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { DevPage } from '../pages/devPage';
+import { DevPage } from '../pages/dev-page';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
-});
-
-test('basic test', async ({ page }) => {
-  const title = page.locator('.navbar__inner .navbar__title');
-  await expect(title).toHaveText('Playwright');
 });
 
 test('dev Page', async ({ page }) => {

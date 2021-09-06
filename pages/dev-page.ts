@@ -1,12 +1,16 @@
 import { BasePage } from './base-page';
-import { WebElement } from './webelement'
+import { WebElement } from './webelement';
 
 export class DevPage extends BasePage {
   private toc = new WebElement(this.page, 'article ul');
   private getStarted = new WebElement(this.page, 'text=Get started');
-  private tradeOffsLearnMore = new WebElement(this.page,'a[href*=powerful]');
-  private whyPlaywright = new WebElement(this.page,'h1:has-text("Why Playwright?")');
-  private coreConceptsHeading = new WebElement(this.page,
+  private tradeOffsLearnMore = new WebElement(this.page, 'a[href*=powerful]');
+  private whyPlaywright = new WebElement(
+    this.page,
+    'h1:has-text("Why Playwright?")'
+  );
+  private coreConceptsHeading = new WebElement(
+    this.page,
     'h1:has-text("Core concepts")'
   );
 

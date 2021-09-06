@@ -3,7 +3,7 @@ import type { Locator, Page } from '@playwright/test';
 export class WebElement {
   public readonly locator: Locator;
   private selector: string;
-  private page: Page
+  private page: Page;
 
   constructor(page: Page, selector: string) {
     this.page = page;
@@ -16,8 +16,6 @@ export class WebElement {
   }
 
   async waitForElement(timeout: number = 10000) {
-    await this.page.waitForSelector(this.selector, {timeout: timeout});
+    await this.page.waitForSelector(this.selector, { timeout: timeout });
   }
 }
-
-

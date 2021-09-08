@@ -62,12 +62,12 @@ const startServer = async  () => {
 });
 }
 
-const test = base.extend<{ port: number }>({
-  port: async ({  }, use) => {
+const test = base.extend<{},{ port: number }>({
+  port: [async ({  }, use) => {
     await startServer();
 
     await use(9);
-  },
+  }, { scope: 'worker', auto: true } ],
 });
 
 test('bar cw', async ({ page, port }) => {
